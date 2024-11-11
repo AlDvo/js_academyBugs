@@ -1,4 +1,5 @@
 import { BasePage } from "./base.page.js";
+import * as allure from "allure-js-commons";
 
 export class CreateAccount extends BasePage {    
     constructor(page) {
@@ -7,6 +8,8 @@ export class CreateAccount extends BasePage {
     }
 
     async clickForgotPassword(){
-        await this.forgotPassword.click();
+        await allure.step("Кликнуть на кнопку `Forgot Your Password?`", async ({ page }) => {
+            await this.forgotPassword.click();
+        });
     }
 }

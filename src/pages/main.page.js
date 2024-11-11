@@ -1,4 +1,5 @@
 import { BasePage } from "./base.page.js";
+import * as allure from "allure-js-commons";
 
 export class MainPage extends BasePage {    
     constructor(page) {
@@ -8,21 +9,29 @@ export class MainPage extends BasePage {
     }
 
     async choosePerPage(quantity) {
-        await this.page.getByRole('link', { name: quantity }).click();
+        await allure.step(`Выбрать кол-во отображаемых элементов на странице ${quantity}`, async ({ page }) => {
+            await this.page.getByRole('link', { name: quantity }).click();
+        });
     }
 
     async clickByFirstProduct(){
-        for (const row of await this.productList.all()){
-            await row.getByRole('link').first().click();
-            break;
-        }
+        await allure.step(`Открыть первый продукт на главной странице`, async ({ page }) => {
+            for (const row of await this.productList.all()){
+                await row.getByRole('link').first().click();
+                break;
+            }
+        });
     }
 
     async clickByProduct(productName){
-        await this.productList.getByRole('link', { name: productName }).click();
+        await allure.step(`Выбрать ${productName} продукт главной на странице`, async ({ page }) => {
+            await this.productList.getByRole('link', { name: productName }).click();
+        });
     }
 
     async clickCokkie(accept){
-        await this.page.getByText(accept).click();
+        await allure.step(`Нажать на всплывающем окне cookies ${accept}`, async ({ page }) => {
+            await this.page.getByText(accept).click();
+        });
     }
 }

@@ -31,6 +31,13 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
   },
 
+  expect: {
+    timeout: 10000,
+    toMatchSnapshot: {
+      maxDiffPixels: 10,
+    },
+  },
+
   /* Configure projects for major browsers */
   projects: [
     // {
