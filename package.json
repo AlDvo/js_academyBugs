@@ -1,0 +1,16 @@
+{
+  "name": "js_academybugs",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000j\u0000s\u0000_\u0000a\u0000c\u0000a\u0000d\u0000e\u0000m\u0000y\u0000B\u0000u\u0000g\u0000s\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.9.0",
+    "allure-playwright": "^3.0.6"
+  }
+}
